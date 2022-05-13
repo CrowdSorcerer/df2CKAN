@@ -1,5 +1,4 @@
 import pandas as pd
-from io import BytesIO
 
 
 def df_to_xml(data_frame: pd.DataFrame):
@@ -16,10 +15,3 @@ def df_to_csv(data_frame: pd.DataFrame):
 
 def df_to_json(data_frame: pd.DataFrame):
     return data_frame.to_json(orient='records')
-
-
-def df_to_excel(data_frame: pd.DataFrame):
-    # Create an in memory binary file object, and write the dataframe to it.
-    in_memory_fp = BytesIO()
-    data_frame.to_excel(in_memory_fp)
-    return in_memory_fp

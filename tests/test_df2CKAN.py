@@ -49,9 +49,3 @@ def test_df_to_json():
            '[{"shape":"square","degrees":360,"sides":4.0},' \
            '{"shape":"circle","degrees":360,"sides":null},' \
            '{"shape":"triangle","degrees":180,"sides":3.0}]'
-
-
-def test_df_to_excel():
-    in_memory_fp = df_to_excel(df)
-    in_memory_fp.seek(0, 0)
-    assert in_memory_fp.readlines()
